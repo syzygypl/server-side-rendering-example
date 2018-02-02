@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>SSR example</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="display-4">This is a HTML content!</h1>
+        <p class="lead">
+            <!--#include virtual="/javascript/content/lead" -->
+        </p>
+        <hr class="my-4">
+        <p>
+            <!--#include virtual="/php/content/main" -->
+        </p>
+        <hr class="my-4">
+        <p>
+            <!--#include virtual="/php/inception?source=/version" -->
+        </p>
+    </div>
+
+</div>

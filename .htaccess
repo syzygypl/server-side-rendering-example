@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^php/(.*) http://php/$1 [P]
+RewriteRule ^javascript/(.*) http://javascript/$1 [P]

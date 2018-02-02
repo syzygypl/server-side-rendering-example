@@ -1,0 +1,32 @@
+version: "3"
+services:
+    www:
+        image: httpd:alpine
+        volumes:
+            - ./:/usr/local/apache2/htdocs
+            - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+        expose:
+          - 80
+        links:
+            - php
+            - javascript
+    php:
+        image: php:5.6
+        command: php -S 0.0.0.0:80 /app/index.php
+        volumes:
+            - ./:/app
+        links:
+            - javascript
+
+    javascript:
+        image: node:8
+        command: node /app/index.js
+        environment:
+          PORT: 80
+        volumes:
+            - ./:/app
+
+networks:
+    default:
+        external:
+            name: szg_default
